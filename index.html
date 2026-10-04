@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Angelina ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Georgia", serif;
+            background: linear-gradient(135deg, #ffd6e7, #ffc0d9, #ffe6f0);
+            color: #5a1835;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts */
+        .hearts {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -60px;
+            font-size: 25px;
+            opacity: 0.7;
+            animation: floatUp linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 5%;
+            animation-duration: 9s;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 15%;
+            animation-duration: 12s;
+            animation-delay: 3s;
+            font-size: 18px;
+        }
+
+        .heart:nth-child(3) {
+            left: 27%;
+            animation-duration: 10s;
+            animation-delay: 1s;
+            font-size: 30px;
+        }
+
+        .heart:nth-child(4) {
+            left: 40%;
+            animation-duration: 14s;
+            animation-delay: 4s;
+            font-size: 20px;
+        }
+
+        .heart:nth-child(5) {
+            left: 53%;
+            animation-duration: 11s;
+            animation-delay: 2s;
+            font-size: 28px;
+        }
+
+        .heart:nth-child(6) {
+            left: 65%;
+            animation-duration: 13s;
+            animation-delay: 5s;
+            font-size: 17px;
+        }
+
+        .heart:nth-child(7) {
+            left: 76%;
+            animation-duration: 10s;
+            animation-delay: 1s;
+            font-size: 32px;
+        }
+
+        .heart:nth-child(8) {
+            left: 88%;
+            animation-duration: 15s;
+            animation-delay: 6s;
+            font-size: 22px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(-50vh) rotate(180deg);
+            }
+
+            100% {
+                transform: translateY(-115vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main content */
+        .container {
+            position: relative;
+            z-index: 2;
+            width: min(900px, 92%);
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        .hero {
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .small-heart {
+            font-size: 50px;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 9vw, 85px);
+            color: #b51f59;
+            margin-bottom: 15px;
+            text-shadow: 0 5px 20px rgba(181, 31, 89, 0.15);
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-style: italic;
+            color: #7c3151;
+            max-width: 650px;
+            line-height: 1.7;
+        }
+
+        .scroll {
+            margin-top: 45px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #a3315e;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        /* Poem card */
+        .poem-card {
+            background: rgba(255, 255, 255, 0.52);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 30px;
+            padding: clamp(25px, 5vw, 60px);
+            box-shadow: 0 20px 60px rgba(125, 26, 65, 0.12);
+        }
+
+        .poem-title {
+            text-align: center;
+            font-size: 38px;
+            color: #a71950;
+            margin-bottom: 45px;
+        }
+
+        .verse {
+            margin-bottom: 38px;
+        }
+
+        .verse p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 5px;
+        }
+
+        .verse .highlight {
+            color: #b51f59;
+            font-weight: bold;
+        }
+
+        /* Proposal */
+        .proposal {
+            text-align: center;
+            margin-top: 100px;
+            padding: 70px 25px;
+        }
+
+        .proposal .heart-big {
+            font-size: 70px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .proposal h2 {
+            font-size: clamp(38px, 7vw, 65px);
+            color: #a71950;
+            margin: 25px 0;
+        }
+
+        .proposal p {
+            font-size: 20px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .question {
+            font-size: clamp(28px, 6vw, 48px);
+            font-weight: bold;
+            color: #b51f59;
+            margin-top: 35px;
+        }
+
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .yes {
+            background: #c72c68;
+            color: white;
+            box-shadow: 0 8px 25px rgba(199, 44, 104, 0.3);
+        }
+
+        .yes:hover {
+            transform: scale(1.08);
+            background: #a71950;
+        }
+
+        .love-message {
+            display: none;
+            margin-top: 35px;
+            font-size: 25px;
+            color: #a71950;
+            font-weight: bold;
+            animation: appear 1s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 14px;
+            color: #87405c;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .container {
+                padding: 45px 0;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .poem-card {
+                padding: 25px 20px;
+                border-radius: 22px;
+            }
+
+            .poem-title {
+                font-size: 30px;
+            }
+
+            .verse p {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
+            .proposal {
+                margin-top: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="hearts">
+        <div class="heart">♡</div>
+        <div class="heart">♥</div>
+        <div class="heart">♡</div>
+        <div class="heart">♥</div>
+        <div class="heart">♡</div>
+        <div class="heart">♥</div>
+        <div class="heart">♡</div>
+        <div class="heart">♥</div>
+    </div>
+
+    <main class="container">
+
+        <!-- Opening -->
+        <section class="hero">
+
+            <div class="small-heart">♡</div>
+
+            <h1>For Angelina</h1>
+
+            <p>
+                Some stories start with perfect moments.
+                Ours started with a stupid pickup line.
+            </p>
+
+            <div class="scroll">
+                ↓ &nbsp; scroll slowly &nbsp; ↓
+            </div>
+
+        </section>
+
+
+        <!-- Poem -->
+        <section class="poem-card">
+
+            <h2 class="poem-title">A Story I Didn't Expect ❤️</h2>
+
+
+            <div class="verse">
+                <p>It started with a stupid line,</p>
+                <p>“Aren’t you mad at Neil Armstrong?”</p>
+                <p>You asked me why, I said, “Cuz he stepped on you,”</p>
+                <p>You called it corny, but somehow, our bond still grew.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>A silly line on Hinge, that's all it seemed to be,</p>
+                <p>But somehow, talking to you felt so good to me.</p>
+                <p>One message became another, then hours would disappear,</p>
+                <p>And before I even knew it, I just loved having you here.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>You gave me that fake ID, which you made to be in disguise,</p>
+                <p>And slowly, our conversations started growing in size.</p>
+                <p>Then one day you gave me your main, something you rarely do,</p>
+                <p>You said you never give it out, yet somehow, I got it from you.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>I still remember how special that felt to me,</p>
+                <p>Because you don't just let everyone in so easily.</p>
+                <p>And somewhere between those messages and getting to know you,</p>
+                <p>I started realizing there was something different about you.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>But we had our dry phase too,</p>
+                <p>When things didn't feel the same between me and you.</p>
+                <p>You'd send me a message, I'd just like it and leave,</p>
+                <p>Looking back at it now, I don't know what I was thinking.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>For a while, our conversations lost their spark,</p>
+                <p>And I guess we both felt that change in the dark.</p>
+                <p>But somehow we found our way back, and I'm glad that we did,</p>
+                <p>Because losing what we had was never something I wanted, not even a bit.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>Then comes our calls, where time forgets to move,</p>
+                <p>Where somehow every conversation felt so smooth.</p>
+                <p>I don't know what happens whenever I hear your voice,</p>
+                <p>But suddenly I'm a kid again, laughing without a choice.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>I make the dumbest jokes, I giggle like a fool,</p>
+                <p>I forget how to act normal, and honestly, that's cool.</p>
+                <p>Because with you I don't have to pretend to be grown,</p>
+                <p>You bring out a version of me I didn't even know.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>And then there's that dancing video you found on my profile,</p>
+                <p>The one that made you match with me and smile.</p>
+                <p>You thought it was cute, and that still makes me grin,</p>
+                <p>Then you showed your friends, and they called me cute.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>It's funny how something as small as a dance,</p>
+                <p>Could somehow give two strangers a chance.</p>
+                <p>And now that I look at where we are today,</p>
+                <p>I'm really glad that video made you have my way.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>And tonight, I know your heart isn't feeling okay,</p>
+                <p>You cried thinking about how much has changed along the way.</p>
+                <p>You looked back at your last birthday and everything that's new,</p>
+                <p>And maybe right now, all those changes feel heavy on you.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>But Angelina, please remember this tonight,</p>
+                <p>Not every change that comes is meant to steal your light.</p>
+                <p>Some chapters end, some people leave, some things rearrange,</p>
+                <p>But sometimes life changes just to bring something strange.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>Something you never planned,</p>
+                <p>Something you never knew you'd need,</p>
+                <p>Someone who walks into your life</p>
+                <p>and makes your heart breathe.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>I can't promise that every birthday from now will be perfect,</p>
+                <p>Or that I'll always know exactly what to say when you're hurting.</p>
+                <p>But I can promise that whenever life feels unclear,</p>
+                <p>I'll be someone who listens, someone who stays near.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>And if tonight feels different from the birthday you knew,</p>
+                <p>I hope this brings something beautiful to you.</p>
+                <p>Because you deserve laughter that doesn't have to hide,</p>
+                <p>And happiness that stays with you, not just for a night.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>So happy birthday, Angelina,</p>
+                <p>My favourite person I met by fluke,</p>
+                <p>The girl who made a corny pickup line</p>
+                <p>turn into something I actually want to last.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>And before this poem comes to an end,</p>
+                <p>There's one question I need to send.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>We've laughed on calls, we've shared our days,</p>
+                <p>You've seen my childish, silly ways.</p>
+                <p>You gave me your main, you let me get close,</p>
+                <p>And somehow, you're the person I adore the most.</p>
+            </div>
+
+
+            <div class="verse">
+                <p>So maybe I'm being a bit brave,</p>
+                <p>Maybe I'm moving a little fast,</p>
+                <p>But I'd rather say what I feel</p>
+                <p>than wonder what could've happened in the past.</p>
+            </div>
+
+
+            <!-- Final question -->
+            <div class="proposal">
+
+                <div class="heart-big">❤️</div>
+
+                <h2>I Love You, Angelina.</h2>
+
+                <p>
+                    Will you take my hand and let me call you my girl,
+                    and let me make you feel loved in this world
+                    where we met so unexpectedly?
+                </p>
+
+                <div class="question">
+                    Will you be my girlfriend?
+                </div>
+
+                <div class="buttons">
+                    <button class="yes" onclick="sayYes()">
+                        Yes, I will ❤️
+                    </button>
+                </div>
+
+                <div class="love-message" id="loveMessage">
+                    You just made me the happiest person alive. ❤️
+                    <br><br>
+                    Happy Birthday, my baby. ♡
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            Made with way too much love for Angelina ❤️
+            <br>
+            — from the guy who started it all with the world's corniest pickup line.
+        </footer>
+
+    </main>
+
+
+    <script>
+        function sayYes() {
+            const message = document.getElementById("loveMessage");
+
+            message.style.display = "block";
+
+            // Create a burst of hearts
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement("div");
+
+                heart.innerHTML = Math.random() > 0.5 ? "❤️" : "♡";
+
+                heart.style.position = "fixed";
+                heart.style.left = "50%";
+                heart.style.top = "65%";
+                heart.style.fontSize = Math.random() * 25 + 15 + "px";
+                heart.style.pointerEvents = "none";
+                heart.style.zIndex = "999";
+
+                document.body.appendChild(heart);
+
+                const x = (Math.random() - 0.5) * 700;
+                const y = (Math.random() - 0.5) * 500;
+
+                heart.animate(
+                    [
+                        {
+                            transform: "translate(-50%, -50%) scale(0)",
+                            opacity: 1
+                        },
+                        {
+                            transform: `translate(${x}px, ${y}px) scale(1.3)`,
+                            opacity: 0
+                        }
+                    ],
+                    {
+                        duration: 1800,
+                        easing: "cubic-bezier(.17,.67,.83,.67)"
+                    }
+                );
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 1800);
+            }
+        }
+    </script>
+
+</body>
+</html>
